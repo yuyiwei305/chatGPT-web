@@ -9,11 +9,11 @@ const createdAt = dayjs().format('YYYY-MM-DD HH:mm:ss')
 const loadding = ref(false)
 const visible = ref(false)
 const summary = ref({} as any)
-const models = ref(['text-davinci-003', 'gpt-3.5-turbo'])
+const models = ref(['gpt-3.5-turbo'])
 
 const message = ref('')
 const api_key = useStorage('api_key', '')
-const chatModel = useStorage('model', 'text-davinci-003')
+const chatModel = useStorage('model', 'gpt-3.5-turbo')
 const continuously = useStorage('continuously', false)
 const messages = useStorage('messages', [
   {
@@ -96,10 +96,10 @@ onMounted(async () => {
         </a-popconfirm>
       </a-tooltip>
 
-      <a-tooltip>
+      <!-- <a-tooltip>
         <template #title>自定义API_KEY</template>
         <KeyOutlined class="pl-3 cursor-pointer !text-red-400" @click="visible = true" />
-      </a-tooltip>
+      </a-tooltip> -->
       <a-checkbox v-model:checked="continuously" class="!text-white !pl-5">连续对话</a-checkbox>
 
 
@@ -107,16 +107,17 @@ onMounted(async () => {
         <a-select-option :value="model" v-for="model in models">{{ model }}</a-select-option>
       </a-select>
 
-      <span class="float-right pr-3 pt-2">
+      <!-- <span class="float-right pr-3 pt-2">
         当前余额：{{ summary?.total_available }}
         <a-tooltip>
           <template #title>刷新余额</template>
           <RedoOutlined @click="refushCredit" />
         </a-tooltip>
-      </span>
+      </span> -->
     </header>
     <div id="layout-body">
       <main id="main">
+        <div id="ad-space"></div>
         <div class="flex-1 relative flex flex-col">
           <!-- header -->
           <!-- content -->
