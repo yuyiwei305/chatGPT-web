@@ -103,9 +103,9 @@ onMounted(async () => {
       <a-checkbox v-model:checked="continuously" class="!text-white !pl-5">连续对话</a-checkbox>
 
 
-      <a-select ref="select" v-model:value="chatModel" style="width: 180px" class="!pl-4">
+      <!-- <a-select ref="select" v-model:value="chatModel" style="width: 180px" class="!pl-4">
         <a-select-option :value="model" v-for="model in models">{{ model }}</a-select-option>
-      </a-select>
+      </a-select> -->
 
       <!-- <span class="float-right pr-3 pt-2">
         当前余额：{{ summary?.total_available }}
